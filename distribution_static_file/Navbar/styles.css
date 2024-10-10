@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navoutercontainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  background-color: aqua;
+  padding: 20px;
+  align-items: center;
+}
+
+.navitems {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.navitems li {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-cntr {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 20px 30px 20px 30px;
+  cursor: pointer;
+  background-color: blue;
+  border: none;
+  color: #ffff;
+  font-size: 20px;
+
+}
