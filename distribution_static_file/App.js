@@ -12,11 +12,17 @@ const server = http.createServer((req, res) => {
   const url = req.url;
   console.log(url);
   // Home page route
+  // console.log(req.body);
+
   if (url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write(homePage);
+    // console.log(res.body);
+
     res.end();
   }
+
+
   // About page route
   else if (url === '/about.html') {
     res.writeHead(200, { "content-type": "text/html" });
@@ -42,6 +48,6 @@ const server = http.createServer((req, res) => {
   }
 })
 // Start the server
-server.listen(3000, () => {
+server.listen(4000, () => {
   console.log("Server is listening at port number 3000...");
 })

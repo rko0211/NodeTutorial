@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Operation</title>
+</head>
+
+<body>
+  <form id="taskForm">
+    <input type="text" id="inputItem" name="inputItem" placeholder="Enter a task" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="responseMessage"></p>
+
+  <script>
+    // Select the form element
+    const form = document.getElementById('taskForm');
+
+    // Listen for the form submission
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();  // Prevent the default form submission
+
+      // Get the input value
+      const inputItem = document.getElementById('inputItem').value;
+
+      // Send a POST request to the server
+      fetch('/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',  // Set the content type
+        },
+        body: new URLSearchParams({ inputItem }),  // Send the input value as form data
+      })
+        .then(response => response.text())  // Parse the response as text
+        .then(message => {
+          // Display the server's response in the HTML
+          document.getElementById('responseMessage').textContent = message;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+  <script src="./static/item.js"></script>
+</body>
+
+</html>

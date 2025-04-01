@@ -1,3 +1,3 @@
 const os = require('os');
 
-os.writeFilesync();
+console.log(os.cpus().length);
